@@ -1,6 +1,12 @@
 # FXMacroData for OpenClaw
 
-A native OpenClaw plugin with 72 separately registered REST/MCP tools and a reusable macroeconomic briefing Skill. Tested with OpenClaw 2026.9.3 and Node 24.16.0.
+Connect your FXMacroData subscription to OpenClaw agents for cross-currency macro research, full available indicator histories and release-calendar analysis. Native tools return source-linked data that your agents can use in deeper research.
+
+**[Subscribe to FXMacroData](https://fxmacrodata.com/subscribe?utm_source=github&utm_medium=referral&utm_campaign=open_source_integrations&utm_content=openclaw_subscribe)** for access to covered non-USD datasets and full available history.
+
+Evaluate the plugin before subscribing with public USD data and the default USD daily briefing; these requests require no FXMacroData key or account.
+
+The native plugin has 72 separately registered REST/MCP tools and a reusable macroeconomic briefing Skill. Tested with OpenClaw 2026.9.3 and Node 24.16.0.
 
 ## Install
 
@@ -13,9 +19,9 @@ openclaw plugins inspect fxmacrodata --runtime --json
 
 The archive installs the built JavaScript plugin, native manifest and Skill. Enable FXMacroData in your OpenClaw tool policy as needed. Ask: “Use FXMacroData to prepare the latest USD macroeconomic briefing and upcoming releases.” The daily briefing calls three live provider operations; individual tools remain available for deeper analysis.
 
-## Optional authenticated access
+## Connect your subscription
 
-Public USD requests need no setup. For protected access, configure an OpenClaw SecretRef in `plugins.entries.fxmacrodata.config.apiKey`. Supply the value through OpenClaw's secret provider, for example a deployment environment variable named `FXMD_API_KEY`:
+To connect your subscription, configure an OpenClaw SecretRef in `plugins.entries.fxmacrodata.config.apiKey`. Supply the value through OpenClaw's secret provider, for example a deployment environment variable named `FXMD_API_KEY`:
 
 ```json
 { "source": "env", "provider": "default", "id": "FXMD_API_KEY" }
@@ -25,7 +31,7 @@ Set the matching environment secret outside the plugin and restart/reload throug
 
 The [capability matrix](CAPABILITIES.md) lists the 23 REST operations and 49 MCP tools, including each operation's parameters.
 
-Start without credentials: the daily briefing defaults to USD. Availability and access requirements vary by operation; protected data requires your own FXMacroData access. Missing observations and release times remain unavailable. FX quotes are reference data, not execution prices.
+The daily briefing defaults to USD. Availability and access requirements vary by operation; protected data requires your own FXMacroData access. Missing observations and release times remain unavailable. FX quotes are reference data, not execution prices.
 
 Results retain the complete redacted public payload, source dates and metadata. Readable tables show at most 50 rows and 16 columns each; their structured result preserves all rows for further analysis.
 
