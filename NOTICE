@@ -1,0 +1,16 @@
+FXMacroData openclaw integration
+Copyright 2026 FXMacroData
+
+Includes the public FXMacroData Mastra client contract, REST transport and redaction
+utilities, used under Apache-2.0. Public source: https://github.com/fxmacrodata/mastra-fxmacrodata
+The hashes below identify the original public client snapshot. This integration
+reformats its TypeScript, removes an unused website constant and adds bounded,
+source-preserving redaction of credentials in nested JSON text:
+contract.ts SHA256 6f277ba258c0e92e0a37391e89aa9664558cb2517e33dec591907a39c76a4554
+mcp-tools.json SHA256 0b4087e5bef68199c5ef265cee794a7af7ad0126f0bd3249395072b95fe8d29e
+operations.json SHA256 3026fe43040a0f45e3059c05fd857bed98e4b321e8d709a3727d3f51b1df893a
+redaction.ts SHA256 ab022d985b648af8bb16646ffe106acd110b184ababfc58716aa56b6e4c60bb3
+rest-client.ts SHA256 9b1f7d2a55f25e090b0ce2d143f1f16b44b6650c50a435a697c50f4b61f5f83a
+
+MCP protocol handling uses the MIT-licensed official TypeScript SDK.
+Bundled dependency license texts accompany the installed package.

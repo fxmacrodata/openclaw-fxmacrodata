@@ -1,0 +1,143 @@
+{
+  "id": "fxmacrodata",
+  "name": "FXMacroData",
+  "version": "0.1.0",
+  "description": "Macroeconomic research and release calendars from FXMacroData. Public USD access needs no API key.",
+  "homepage": "https://fxmacrodata.com",
+  "categories": [
+    "tools"
+  ],
+  "contracts": {
+    "tools": [
+      "fxmacrodata_rest_health",
+      "fxmacrodata_rest_ping",
+      "fxmacrodata_rest_forex",
+      "fxmacrodata_rest_intraday_reference_rates",
+      "fxmacrodata_rest_fx_sources",
+      "fxmacrodata_rest_fx_source_universe",
+      "fxmacrodata_rest_data_catalogue",
+      "fxmacrodata_rest_release_calendar",
+      "fxmacrodata_rest_market_sessions",
+      "fxmacrodata_rest_rate_differentials",
+      "fxmacrodata_rest_curves",
+      "fxmacrodata_rest_financial_prices",
+      "fxmacrodata_rest_press_releases",
+      "fxmacrodata_rest_risk_sentiment",
+      "fxmacrodata_rest_factors",
+      "fxmacrodata_rest_event_predictions",
+      "fxmacrodata_rest_latest_announcements",
+      "fxmacrodata_rest_indicator_history",
+      "fxmacrodata_rest_cot",
+      "fxmacrodata_rest_latest_commodities",
+      "fxmacrodata_rest_commodities",
+      "fxmacrodata_rest_announcement_changes",
+      "fxmacrodata_rest_stream_events",
+      "fxmacrodata_mcp_ping",
+      "fxmacrodata_mcp_mcp_capabilities",
+      "fxmacrodata_mcp_mcp_auth_guide",
+      "fxmacrodata_mcp_subscribe_for_mcp_access",
+      "fxmacrodata_mcp_data_catalogue",
+      "fxmacrodata_mcp_risk_sentiment",
+      "fxmacrodata_mcp_macro_news",
+      "fxmacrodata_mcp_release_calendar",
+      "fxmacrodata_mcp_release_calendar_visual_artifact",
+      "fxmacrodata_mcp_event_predictions",
+      "fxmacrodata_mcp_latest_announcements",
+      "fxmacrodata_mcp_announcement_changes",
+      "fxmacrodata_mcp_press_releases",
+      "fxmacrodata_mcp_macro_factor",
+      "fxmacrodata_mcp_fx_reference_sources",
+      "fxmacrodata_mcp_fx_reference_universe",
+      "fxmacrodata_mcp_fx_intraday_reference_rates",
+      "fxmacrodata_mcp_rate_curve",
+      "fxmacrodata_mcp_rate_differentials",
+      "fxmacrodata_mcp_latest_commodities",
+      "fxmacrodata_mcp_forex",
+      "fxmacrodata_mcp_seasonality",
+      "fxmacrodata_mcp_indicator_query",
+      "fxmacrodata_mcp_plot_visual_artifact",
+      "fxmacrodata_mcp_indicator_visual_artifact",
+      "fxmacrodata_mcp_forex_visual_artifact",
+      "fxmacrodata_mcp_commodities_visual_artifact",
+      "fxmacrodata_mcp_cot_visual_artifact",
+      "fxmacrodata_mcp_policy_rate_differential_visual_artifact",
+      "fxmacrodata_mcp_macro_briefing_task",
+      "fxmacrodata_mcp_indicator_intel_task",
+      "fxmacrodata_mcp_pair_intel_task",
+      "fxmacrodata_mcp_macro_heatmap_task",
+      "fxmacrodata_mcp_policy_scenario_modeler_task",
+      "fxmacrodata_mcp_macro_war_room_task",
+      "fxmacrodata_mcp_event_impact_replay_task",
+      "fxmacrodata_mcp_quant_scenario_lab_task",
+      "fxmacrodata_mcp_known_at_time_task",
+      "fxmacrodata_mcp_macro_regime_classifier_task",
+      "fxmacrodata_mcp_release_risk_score_task",
+      "fxmacrodata_mcp_portfolio_risk_engine_task",
+      "fxmacrodata_mcp_fx_trade_setup_task",
+      "fxmacrodata_mcp_fx_backtest_task",
+      "fxmacrodata_mcp_macro_research_pack_task",
+      "fxmacrodata_mcp_market_sessions",
+      "fxmacrodata_mcp_cot_data",
+      "fxmacrodata_mcp_commodities",
+      "fxmacrodata_mcp_financial_prices",
+      "fxmacrodata_mcp_official_dataset_family",
+      "fxmacrodata_daily_briefing"
+    ]
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "skills": [
+    "./skills"
+  ],
+  "uiHints": {
+    "apiKey": {
+      "label": "FXMacroData SecretRef",
+      "sensitive": true,
+      "help": "Optional. Public USD access requires no key. Use OpenClaw secret references."
+    }
+  },
+  "configContracts": {
+    "secretInputs": {
+      "paths": [
+        {
+          "path": "apiKey",
+          "expected": "string",
+          "ownerKind": "capability"
+        }
+      ]
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "apiKey": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source": {
+            "type": "string",
+            "enum": [
+              "env",
+              "file",
+              "exec"
+            ]
+          },
+          "provider": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "provider",
+          "id"
+        ],
+        "description": "Optional OpenClaw SecretRef for FXMacroData access. Public USD data needs no key."
+      }
+    }
+  }
+}
