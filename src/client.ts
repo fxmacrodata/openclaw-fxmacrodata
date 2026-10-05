@@ -161,10 +161,10 @@ export class FXMacroDataClient {
   }
 
   get source(): string {
-    return `https://fxmacrodata.com/?utm_source=${this.#slug}&utm_medium=integration&utm_campaign=open_source_integrations&utm_content=app`;
+    return `https://fxmacrodata.com/?utm_source=${this.#slug}&utm_medium=integration&utm_campaign=${this.#slug}-fxmacrodata&utm_content=app`;
   }
   get documentation(): string {
-    return 'https://fxmacrodata.com/documentation/reference';
+    return `https://fxmacrodata.com/documentation/reference?utm_source=${this.#slug}&utm_medium=integration&utm_campaign=${this.#slug}-fxmacrodata&utm_content=docs`;
   }
 
   async execute(id: string, input: unknown = {}, signal?: AbortSignal): Promise<DataResult> {

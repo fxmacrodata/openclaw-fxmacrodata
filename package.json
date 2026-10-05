@@ -4,7 +4,7 @@
   "type": "module",
   "description": "FXMacroData macroeconomic tools for OpenClaw",
   "license": "Apache-2.0",
-  "homepage": "https://fxmacrodata.com",
+  "homepage": "https://fxmacrodata.com/?utm_source=npm&utm_medium=referral&utm_campaign=openclaw-fxmacrodata&utm_content=homepage",
   "files": [
     "dist/index.js",
     "dist/index.d.ts",

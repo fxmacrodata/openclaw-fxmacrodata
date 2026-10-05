@@ -3,7 +3,7 @@
   "name": "FXMacroData",
   "version": "0.1.0",
   "description": "Macroeconomic research and release calendars from FXMacroData. Public USD access needs no API key.",
-  "homepage": "https://fxmacrodata.com",
+  "homepage": "https://fxmacrodata.com/?utm_source=openclaw&utm_medium=integration&utm_campaign=openclaw-fxmacrodata&utm_content=homepage",
   "categories": [
     "tools"
   ],
