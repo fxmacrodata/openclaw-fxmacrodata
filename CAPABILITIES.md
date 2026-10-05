@@ -79,4 +79,4 @@ All 23 REST and 49 MCP operations are registered. USD is the default for the bri
 
 The named JSON schemas are bundled with the client, checked before requests, and exposed by the host tool registration. REST event streaming is a bounded snapshot. MCP asynchronous research/task and visual-artifact operations retain their public content, resources, annotations and structured payloads.
 
-Website: https://fxmacrodata.com/documentation/reference
+Website: https://fxmacrodata.com/documentation/reference?utm_source=github&utm_medium=referral&utm_campaign=openclaw-fxmacrodata&utm_content=capabilities
