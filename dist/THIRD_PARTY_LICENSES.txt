@@ -24,7 +24,7 @@ SOFTWARE.
 
 ----------------
 
-ajv 8.17.1
+ajv 8.20.0
 The MIT License (MIT)
 
 Copyright (c) 2015-2021 Evgeny Poberezkin
@@ -156,7 +156,7 @@ SOFTWARE.
 
 ----------------
 
-fast-uri 3.1.7
+fast-uri 3.1.8
 Copyright (c) 2011-2021, Gary Court until https://github.com/garycourt/uri-js/commit/a1acf730b4bba3f1097c9f52e7d9d3aba8cdcaae
 Copyright (c) 2021-present The Fastify team <https://github.com/fastify/fastify#team>
 All rights reserved.
@@ -269,7 +269,7 @@ THE SOFTWARE.
 
 ----------------
 
-zod 4.6.1
+zod 4.6.5
 MIT License
 
 Copyright (c) 2025 Colin McDonnell
