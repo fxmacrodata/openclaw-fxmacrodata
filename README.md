@@ -2,7 +2,7 @@
 
 Connect your FXMacroData subscription to OpenClaw agents for cross-currency macro research, full available indicator histories and release-calendar analysis. Native tools return source-linked data that your agents can use in deeper research.
 
-**[Subscribe to FXMacroData](https://fxmacrodata.com/subscribe?utm_source=github&utm_medium=referral&utm_campaign=open_source_integrations&utm_content=openclaw_subscribe)** for access to covered non-USD datasets and full available history.
+**[Subscribe to FXMacroData](https://fxmacrodata.com/subscribe?utm_source=github&utm_medium=referral&utm_campaign=openclaw-fxmacrodata&utm_content=subscribe)** for access to covered non-USD datasets and full available history.
 
 Evaluate the plugin before subscribing with public USD data and the default USD daily briefing; these requests require no FXMacroData key or account.
 
@@ -35,7 +35,7 @@ The daily briefing defaults to USD. Availability and access requirements vary by
 
 Results retain the complete redacted public payload, source dates and metadata. Readable tables show at most 50 rows and 16 columns each; their structured result preserves all rows for further analysis.
 
-[FXMacroData](https://fxmacrodata.com/?utm_source=github&utm_medium=referral&utm_campaign=open_source_integrations&utm_content=openclaw_readme) | [API documentation](https://fxmacrodata.com/documentation/reference?utm_source=github&utm_medium=referral&utm_campaign=open_source_integrations&utm_content=openclaw_docs)
+[FXMacroData](https://fxmacrodata.com/?utm_source=github&utm_medium=referral&utm_campaign=openclaw-fxmacrodata&utm_content=readme) | [API documentation](https://fxmacrodata.com/documentation/reference?utm_source=github&utm_medium=referral&utm_campaign=openclaw-fxmacrodata&utm_content=docs)
 
 ## Data and credentials
 
