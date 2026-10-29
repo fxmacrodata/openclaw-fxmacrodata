@@ -1,11 +1,10 @@
 {
   "id": "fxmacrodata",
   "name": "FXMacroData",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Macroeconomic research and release calendars from FXMacroData. Public USD access needs no API key.",
-  "homepage": "https://fxmacrodata.com/?utm_source=openclaw&utm_medium=integration&utm_campaign=openclaw-fxmacrodata&utm_content=homepage",
   "categories": [
-    "tools"
+    "data-analytics"
   ],
   "contracts": {
     "tools": [
@@ -37,9 +36,14 @@
       "fxmacrodata_mcp_mcp_auth_guide",
       "fxmacrodata_mcp_subscribe_for_mcp_access",
       "fxmacrodata_mcp_data_catalogue",
+      "fxmacrodata_mcp_source_metadata",
       "fxmacrodata_mcp_risk_sentiment",
+      "fxmacrodata_mcp_risk_sentiment_changes",
       "fxmacrodata_mcp_macro_news",
       "fxmacrodata_mcp_release_calendar",
+      "fxmacrodata_mcp_calendar_snapshot",
+      "fxmacrodata_mcp_calendar_event_versions",
+      "fxmacrodata_mcp_calendar_archive_coverage",
       "fxmacrodata_mcp_release_calendar_visual_artifact",
       "fxmacrodata_mcp_event_predictions",
       "fxmacrodata_mcp_latest_announcements",
@@ -76,9 +80,12 @@
       "fxmacrodata_mcp_fx_trade_setup_task",
       "fxmacrodata_mcp_fx_backtest_task",
       "fxmacrodata_mcp_macro_research_pack_task",
+      "fxmacrodata_mcp_prediction_coverage",
       "fxmacrodata_mcp_market_sessions",
       "fxmacrodata_mcp_cot_data",
       "fxmacrodata_mcp_commodities",
+      "fxmacrodata_mcp_positioning",
+      "fxmacrodata_mcp_native_history",
       "fxmacrodata_mcp_financial_prices",
       "fxmacrodata_mcp_official_dataset_family",
       "fxmacrodata_daily_briefing"

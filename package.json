@@ -1,10 +1,10 @@
 {
   "name": "@fxmacrodata/openclaw",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "FXMacroData macroeconomic tools for OpenClaw",
   "license": "Apache-2.0",
-  "homepage": "https://fxmacrodata.com/?utm_source=npm&utm_medium=referral&utm_campaign=openclaw-fxmacrodata&utm_content=homepage",
+  "homepage": "https://fxmacrodata.com/?utm_source=clawhub&utm_medium=marketplace&utm_campaign=ai_assistant_distribution&utm_content=plugin_homepage",
   "files": [
     "dist/index.js",
     "dist/index.d.ts",
@@ -14,7 +14,8 @@
     "NOTICE",
     "CAPABILITIES.md",
     "openclaw.plugin.json",
-    "skills/fxmacrodata/SKILL.md"
+    "skills/fxmacrodata/SKILL.md",
+    "assets/icon.png"
   ],
   "scripts": {
     "build": "node scripts/build.mjs",
@@ -25,12 +26,12 @@
   "devDependencies": {
     "esbuild": "0.28.2",
     "typescript": "5.9.3",
-    "tsx": "4.23.15",
+    "tsx": "4.21.0",
     "@types/node": "24.10.9"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.30.0",
-    "ajv": "8.20.0",
+    "@modelcontextprotocol/sdk": "1.32.0",
+    "ajv": "8.17.1",
     "typebox": "1.3.18"
   },
   "engines": {
@@ -54,5 +55,25 @@
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": "./dist/index.js"
+  "exports": "./dist/index.js",
+  "overrides": {
+    "brace-expansion@^5.0.0": "5.0.12",
+    "@modelcontextprotocol/sdk@1.30.0": "1.32.0",
+    "body-parser": "2.4.0",
+    "undici": "8.12.2",
+    "zod": "4.6.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fxmacrodata/openclaw-fxmacrodata.git"
+  },
+  "author": "FXMacroData <info@fxmacrodata.com>",
+  "keywords": [
+    "openclaw",
+    "fxmacrodata",
+    "macroeconomics",
+    "foreign-exchange",
+    "economic-calendar",
+    "mcp"
+  ]
 }

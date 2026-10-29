@@ -42,12 +42,17 @@ export default definePluginEntry({
     'Macroeconomic research, release calendars, FX reference data, commodities, positioning, and visual research tools.',
   configSchema: buildJsonPluginConfigSchema(configSchema),
   register(api) {
-    const key = api.pluginConfig?.apiKey;
-    if (key !== undefined && typeof key !== 'string')
-      throw new Error(
-        'Resolve the optional FXMacroData SecretRef through OpenClaw before using authenticated access.',
-      );
-    const client = new FXMacroDataClient({ apiKey: key, slug: 'openclaw' });
+    // Registration also runs during discovery/inspection, before host secrets
+    // are necessarily materialized. Validate credentials when a tool executes;
+    // an unresolved reference must never silently fall back to public access.
+    const getClient = () => {
+      const key = api.pluginConfig?.apiKey;
+      if (key !== undefined && typeof key !== 'string')
+        throw new Error(
+          'Resolve the optional FXMacroData SecretRef through OpenClaw before using authenticated access.',
+        );
+      return new FXMacroDataClient({ apiKey: key, slug: 'openclaw' });
+    };
     for (const item of capabilities) {
       api.registerTool({
         name: `fxmacrodata_${item.id}`,
@@ -56,6 +61,7 @@ export default definePluginEntry({
         parameters: Type.Unsafe({ ...item.schema, additionalProperties: false }),
         outputSchema: Type.Unsafe(resultSchema),
         async execute(_id, args, signal) {
+          const client = getClient();
           const result = await client.execute(item.id, args, signal);
           return {
             content: [{ type: 'text' as const, text: renderResult(result) }],
@@ -71,6 +77,7 @@ export default definePluginEntry({
         'Read latest indicator observations, upcoming releases, and market sessions together. Defaults to public USD; never infer missing release times.',
       parameters: briefingSchema,
       async execute(_id, args, signal) {
+        const client = getClient();
         const input = validateArguments(briefingInputSchema, args);
         const results = await client.briefing(String(input.currency ?? 'usd'), signal);
         return {

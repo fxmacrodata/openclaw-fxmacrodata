@@ -4,10 +4,10 @@ import { FXMacroDataClient, capabilities, renderResult, validateInput } from '..
 import { redactSecrets } from '../src/public-client/redaction';
 import { sample, mockFetch } from './fixtures';
 
-test('the public contract contains all 23 REST and 49 MCP operations', () => {
+test('the public contract contains all 23 REST and 57 MCP operations', () => {
   assert.equal(capabilities.filter((item) => item.transport === 'rest').length, 23);
-  assert.equal(capabilities.filter((item) => item.transport === 'mcp').length, 49);
-  assert.equal(new Set(capabilities.map((item) => item.id)).size, 72);
+  assert.equal(capabilities.filter((item) => item.transport === 'mcp').length, 57);
+  assert.equal(new Set(capabilities.map((item) => item.id)).size, 80);
 });
 
 for (const operation of capabilities)

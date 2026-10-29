@@ -14,3 +14,7 @@ rest-client.ts SHA256 9b1f7d2a55f25e090b0ce2d143f1f16b44b6650c50a435a697c50f4b61
 
 MCP protocol handling uses the MIT-licensed official TypeScript SDK.
 Bundled dependency license texts accompany the installed package.
+
+Version 0.1.1 refreshes the public MCP names, descriptions, schemas and annotations
+from FXMacroData protocol discovery on 29 October 2026 (57 tools). The original
+snapshot hashes above describe provenance, not the refreshed inventory bytes.

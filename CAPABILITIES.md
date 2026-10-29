@@ -1,6 +1,8 @@
 # Capability matrix
 
-All 23 REST and 49 MCP operations are registered. USD is the default for the briefing. Access and data availability remain operation-specific.
+All 23 REST and 57 MCP operations are registered as 80 individual tools, plus the daily briefing tool (81 total). USD is the default for the briefing. Access and data availability remain operation-specific.
+
+The MCP inventory was refreshed from protocol discovery on 29 October 2026. Discovery establishes names and schemas; adapter tests use synthetic responses and do not establish live execution of all operations.
 
 | Operation | Transport | Native registration | Parameters |
 | --- | --- | --- | --- |
@@ -32,11 +34,16 @@ All 23 REST and 49 MCP operations are registered. USD is the default for the bri
 | `mcp_mcp_auth_guide` | MCP | `fxmacrodata_mcp_mcp_auth_guide` | None |
 | `mcp_subscribe_for_mcp_access` | MCP | `fxmacrodata_mcp_subscribe_for_mcp_access` | None |
 | `mcp_data_catalogue` | MCP | `fxmacrodata_mcp_data_catalogue` | `currency` (required), `include_coverage`, `include_capabilities`, `indicator` |
+| `mcp_source_metadata` | MCP | `fxmacrodata_mcp_source_metadata` | `currency` (required), `sha256` (required) |
 | `mcp_risk_sentiment` | MCP | `fxmacrodata_mcp_risk_sentiment` | `start_date`, `end_date` |
+| `mcp_risk_sentiment_changes` | MCP | `fxmacrodata_mcp_risk_sentiment_changes` | `after_sequence`, `limit` |
 | `mcp_macro_news` | MCP | `fxmacrodata_mcp_macro_news` | `currency` (required), `lookback_days`, `limit`, `offset` |
 | `mcp_release_calendar` | MCP | `fxmacrodata_mcp_release_calendar` | `currency` (required), `indicator`, `start_date`, `end_date`, `timezone` |
+| `mcp_calendar_snapshot` | MCP | `fxmacrodata_mcp_calendar_snapshot` | `currency` (required), `as_of` (required), `knowledge_mode`, `start_date`, `end_date`, `importance`, `event_kind`, `checkpoint`, `cursor`, `limit` |
+| `mcp_calendar_event_versions` | MCP | `fxmacrodata_mcp_calendar_event_versions` | `currency` (required), `archive_event_id` (required), `checkpoint`, `cursor`, `limit` |
+| `mcp_calendar_archive_coverage` | MCP | `fxmacrodata_mcp_calendar_archive_coverage` | `currency` (required) |
 | `mcp_release_calendar_visual_artifact` | MCP | `fxmacrodata_mcp_release_calendar_visual_artifact` | `currency` (required), `indicator`, `start_date`, `end_date`, `timezone` |
-| `mcp_event_predictions` | MCP | `fxmacrodata_mcp_event_predictions` | `currency` (required), `indicator` (required), `prediction_type`, `prediction_source`, `start_date`, `end_date`, `limit`, `offset`, `page` |
+| `mcp_event_predictions` | MCP | `fxmacrodata_mcp_event_predictions` | `currency` (required), `indicator` (required), `prediction_type`, `prediction_source`, `start_date`, `end_date`, `limit`, `offset`, `page`, `prediction_class`, `as_of`, `event_compatible_only`, `pre_release_only`, `official_limit`, `before_date`, `seasonality`, `frequency`, `annualization`, `period_aggregation`, `basis` |
 | `mcp_latest_announcements` | MCP | `fxmacrodata_mcp_latest_announcements` | `currency` (required) |
 | `mcp_announcement_changes` | MCP | `fxmacrodata_mcp_announcement_changes` | `currencies`, `indicators`, `since`, `limit`, `payload` |
 | `mcp_press_releases` | MCP | `fxmacrodata_mcp_press_releases` | `currency` (required), `limit`, `offset` |
@@ -49,12 +56,12 @@ All 23 REST and 49 MCP operations are registered. USD is the default for the bri
 | `mcp_latest_commodities` | MCP | `fxmacrodata_mcp_latest_commodities` | None |
 | `mcp_forex` | MCP | `fxmacrodata_mcp_forex` | `base` (required), `quote` (required), `start_date`, `end_date`, `indicators` |
 | `mcp_seasonality` | MCP | `fxmacrodata_mcp_seasonality` | `instrument` (required), `lookback_years`, `month`, `end_date` |
-| `mcp_indicator_query` | MCP | `fxmacrodata_mcp_indicator_query` | `currency`, `indicator`, `start_date`, `end_date`, `limit`, `offset`, `page`, `slug`, `official_only` |
+| `mcp_indicator_query` | MCP | `fxmacrodata_mcp_indicator_query` | `currency`, `indicator`, `start_date`, `end_date`, `limit`, `offset`, `page`, `slug`, `official_only`, `as_of`, `availability`, `dataset_version`, `revisions`, `series_mode`, `value_mode` |
 | `mcp_plot_visual_artifact` | MCP | `fxmacrodata_mcp_plot_visual_artifact` | `query`, `series`, `source`, `currency`, `indicator`, `base`, `quote`, `prediction_type`, `prediction_source`, `x_axis`, `y_key`, `y_label`, `title`, `chart_kind`, `start_date`, `end_date`, `limit`, `offset`, `page` |
 | `mcp_indicator_visual_artifact` | MCP | `fxmacrodata_mcp_indicator_visual_artifact` | `currency` (required), `indicator` (required), `start_date`, `end_date`, `limit`, `offset`, `page` |
 | `mcp_forex_visual_artifact` | MCP | `fxmacrodata_mcp_forex_visual_artifact` | `base` (required), `quote` (required), `start_date`, `end_date`, `indicators` |
 | `mcp_commodities_visual_artifact` | MCP | `fxmacrodata_mcp_commodities_visual_artifact` | `indicator` (required), `start_date`, `end_date` |
-| `mcp_cot_visual_artifact` | MCP | `fxmacrodata_mcp_cot_visual_artifact` | `currency` (required), `start_date`, `end_date`, `metric` |
+| `mcp_cot_visual_artifact` | MCP | `fxmacrodata_mcp_cot_visual_artifact` | `currency` (required), `start_date`, `end_date`, `metric`, `report` |
 | `mcp_policy_rate_differential_visual_artifact` | MCP | `fxmacrodata_mcp_policy_rate_differential_visual_artifact` | `base` (required), `quote` (required), `start_date`, `end_date` |
 | `mcp_macro_briefing_task` | MCP | `fxmacrodata_mcp_macro_briefing_task` | `currency` (required) |
 | `mcp_indicator_intel_task` | MCP | `fxmacrodata_mcp_indicator_intel_task` | `currency` (required), `indicator` (required), `start_date`, `end_date` |
@@ -64,19 +71,21 @@ All 23 REST and 49 MCP operations are registered. USD is the default for the bri
 | `mcp_macro_war_room_task` | MCP | `fxmacrodata_mcp_macro_war_room_task` | `base`, `quote`, `currency`, `indicator`, `start_date`, `end_date` |
 | `mcp_event_impact_replay_task` | MCP | `fxmacrodata_mcp_event_impact_replay_task` | `currency` (required), `indicator` (required), `base`, `quote`, `lookback_events`, `start_date`, `end_date` |
 | `mcp_quant_scenario_lab_task` | MCP | `fxmacrodata_mcp_quant_scenario_lab_task` | `base` (required), `quote` (required), `shock_leg`, `shock_bps`, `elasticity_per_100bps`, `annualized_volatility_pct`, `horizon_days`, `start_date`, `end_date` |
-| `mcp_known_at_time_task` | MCP | `fxmacrodata_mcp_known_at_time_task` | `currency` (required), `indicator` (required), `as_of` (required), `start_date`, `end_date` |
+| `mcp_known_at_time_task` | MCP | `fxmacrodata_mcp_known_at_time_task` | `currency` (required), `indicator` (required), `as_of` (required), `start_date`, `end_date`, `availability`, `dataset_version` |
 | `mcp_macro_regime_classifier_task` | MCP | `fxmacrodata_mcp_macro_regime_classifier_task` | `currency` (required), `start_date`, `end_date` |
 | `mcp_release_risk_score_task` | MCP | `fxmacrodata_mcp_release_risk_score_task` | `base` (required), `quote` (required), `horizon_events` |
 | `mcp_portfolio_risk_engine_task` | MCP | `fxmacrodata_mcp_portfolio_risk_engine_task` | `positions_json` (required), `stress_shock_pct`, `horizon_events` |
 | `mcp_fx_trade_setup_task` | MCP | `fxmacrodata_mcp_fx_trade_setup_task` | `base` (required), `quote` (required), `horizon_events`, `include_cot` |
 | `mcp_fx_backtest_task` | MCP | `fxmacrodata_mcp_fx_backtest_task` | `base` (required), `quote` (required), `start_date`, `end_date`, `strategy`, `momentum_lookback`, `transaction_cost_bps`, `initial_capital`, `event_gated`, `event_window_days` |
 | `mcp_macro_research_pack_task` | MCP | `fxmacrodata_mcp_macro_research_pack_task` | `currency` (required), `indicator` (required), `base`, `quote`, `start_date`, `end_date` |
+| `mcp_prediction_coverage` | MCP | `fxmacrodata_mcp_prediction_coverage` | `currency` |
 | `mcp_market_sessions` | MCP | `fxmacrodata_mcp_market_sessions` | `at` |
-| `mcp_cot_data` | MCP | `fxmacrodata_mcp_cot_data` | `currency` (required), `start_date`, `end_date` |
+| `mcp_cot_data` | MCP | `fxmacrodata_mcp_cot_data` | `currency` (required), `start_date`, `end_date`, `report` |
 | `mcp_commodities` | MCP | `fxmacrodata_mcp_commodities` | `indicator`, `symbol`, `start_date`, `end_date` |
+| `mcp_positioning` | MCP | `fxmacrodata_mcp_positioning` | `instrument`, `report`, `start_date`, `end_date`, `limit`, `offset` |
+| `mcp_native_history` | MCP | `fxmacrodata_mcp_native_history` | `source`, `year`, `measure`, `holder_country_code`, `ownership_basis`, `maturity`, `account_type`, `limit`, `offset`, `order`, `region`, `product` |
 | `mcp_financial_prices` | MCP | `fxmacrodata_mcp_financial_prices` | `currency` (required), `source`, `start_date`, `end_date`, `measure`, `instrument_id`, `issuer`, `limit`, `offset` |
 | `mcp_official_dataset_family` | MCP | `fxmacrodata_mcp_official_dataset_family` | `endpoint_type` (required), `dataset` (required), `currency` (required), `component` |
+| `daily_briefing` | REST + MCP | `fxmacrodata_daily_briefing` | `currency` (defaults to USD) |
 
-The named JSON schemas are bundled with the client, checked before requests, and exposed by the host tool registration. REST event streaming is a bounded snapshot. MCP asynchronous research/task and visual-artifact operations retain their public content, resources, annotations and structured payloads.
-
-Website: https://fxmacrodata.com/documentation/reference?utm_source=github&utm_medium=referral&utm_campaign=openclaw-fxmacrodata&utm_content=capabilities
+Each MCP tool retains its public input schema and uses the hosted MCP transport. Structured payloads, content and source metadata remain available in native results; missing values and publisher times are not inferred.
